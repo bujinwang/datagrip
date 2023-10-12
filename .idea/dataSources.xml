@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="SBC_lifetime" uuid="8b9fbe78-7fb5-4ad3-93aa-9811b8db6153">
+      <driver-ref>sqlserver.jtds</driver-ref>
+      <jdbc-driver>net.sourceforge.jtds.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:jtds:sqlserver://PSS010.sk.bluecross.ca/outsystems</jdbc-url>
+      <jdbc-additional-properties>
+        <property name="DOMAIN" value="sk.bluecross.ca" />
+      </jdbc-additional-properties>
+    </data-source>
+    <data-source source="LOCAL" name="Redis Prod" uuid="c0a9515b-89bf-4d8b-9ce7-ef999a3996b5">
+      <driver-ref>redis</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>jdbc.RedisDriver</jdbc-driver>
+      <jdbc-url>jdbc:redis://172.16.40.2:6379/0</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="OSQA" uuid="0f402ce3-5b11-45c8-b903-ba08fa48c812">
+      <driver-ref>db2.jtopen</driver-ref>
+      <jdbc-driver>com.ibm.as400.access.AS400JDBCDriver</jdbc-driver>
+      <jdbc-url>jdbc:as400://OSQA.sk.bluecross.ca</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+      <driver-properties>
+        <property name="auto commit" value="false" />
+      </driver-properties>
+    </data-source>
+    <data-source source="LOCAL" name="OSUAT" read-only="true" uuid="caebd000-65c4-4128-8192-f07d9fb8313b">
+      <driver-ref>db2.jtopen</driver-ref>
+      <jdbc-driver>com.ibm.as400.access.AS400JDBCDriver</jdbc-driver>
+      <jdbc-url>jdbc:as400://OSUAT.sk.bluecross.ca</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+      <driver-properties>
+        <property name="auto commit" value="false" />
+      </driver-properties>
+    </data-source>
+    <data-source source="LOCAL" name="SBC_UAT" uuid="9d31d81b-54ae-4681-9e32-6fde9dd34c72">
+      <driver-ref>sqlserver.jtds</driver-ref>
+      <remarks>QA OS database : USS198</remarks>
+      <jdbc-driver>net.sourceforge.jtds.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:jtds:sqlserver://USS198.sk.bluecross.ca</jdbc-url>
+      <jdbc-additional-properties>
+        <property name="DOMAIN" value="sk.bluecross.ca" />
+      </jdbc-additional-properties>
+    </data-source>
+    <data-source source="LOCAL" name="SBC_QA" uuid="1dc528c7-22d6-4a7a-bd47-d624605ff633">
+      <driver-ref>sqlserver.jtds</driver-ref>
+      <remarks>QA OS database : QSS214</remarks>
+      <jdbc-driver>net.sourceforge.jtds.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:jtds:sqlserver://172.16.18.214</jdbc-url>
+      <jdbc-additional-properties>
+        <property name="DOMAIN" value="sk.bluecross.ca" />
+      </jdbc-additional-properties>
+    </data-source>
+    <data-source source="LOCAL" name="OSDEV" read-only="true" uuid="5670e2ab-df0c-4693-8597-44c6b1f48662">
+      <driver-ref>db2.jtopen</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.ibm.as400.access.AS400JDBCDriver</jdbc-driver>
+      <jdbc-url>jdbc:as400://OSDEV.sk.bluecross.ca</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+      <driver-properties>
+        <property name="auto commit" value="false" />
+      </driver-properties>
+    </data-source>
+    <data-source source="LOCAL" name="SBC_Prod" uuid="e9593a4d-4715-499a-815f-aa9e6389dfa2">
+      <driver-ref>sqlserver.jtds</driver-ref>
+      <remarks>PSS004</remarks>
+      <jdbc-driver>net.sourceforge.jtds.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:jtds:sqlserver://172.16.18.4</jdbc-url>
+      <jdbc-additional-properties>
+        <property name="DOMAIN" value="sk.bluecross.ca" />
+      </jdbc-additional-properties>
+    </data-source>
+    <data-source source="LOCAL" name="BCAS400_CRM" read-only="true" uuid="abc7d406-9632-4bc8-8dd3-1eeeaf99af5c">
+      <driver-ref>db2.jtopen</driver-ref>
+      <jdbc-driver>com.ibm.as400.access.AS400JDBCDriver</jdbc-driver>
+      <jdbc-url>jdbc:as400://BCAS400.sk.bluecross.ca</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+      <driver-properties>
+        <property name="auto commit" value="false" />
+      </driver-properties>
+    </data-source>
+    <data-source source="LOCAL" name="SBC_Training" uuid="b7f98946-5a2d-4c7f-b3b8-1eb1b775587a">
+      <driver-ref>sqlserver.jtds</driver-ref>
+      <remarks>QA OS database : TSS183</remarks>
+      <jdbc-driver>net.sourceforge.jtds.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:jtds:sqlserver://TSS183.sk.bluecross.ca</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="BCAS400 Burt" read-only="true" uuid="19851f7a-d18a-4d16-8f19-56287464bb9c">
+      <driver-ref>db2.jtopen</driver-ref>
+      <jdbc-driver>com.ibm.as400.access.AS400JDBCDriver</jdbc-driver>
+      <jdbc-url>jdbc:as400://BCAS400.sk.bluecross.ca</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+      <driver-properties>
+        <property name="auto commit" value="false" />
+      </driver-properties>
+    </data-source>
+    <data-source source="LOCAL" name="SBC_DEV" uuid="65b634dd-22f3-4600-b33a-4df3fd0a2950">
+      <driver-ref>sqlserver.jtds</driver-ref>
+      <remarks>DSS230</remarks>
+      <jdbc-driver>net.sourceforge.jtds.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:jtds:sqlserver://DSS230.sk.bluecross.ca</jdbc-url>
+      <jdbc-additional-properties>
+        <property name="DOMAIN" value="sk.bluecross.ca" />
+      </jdbc-additional-properties>
+    </data-source>
+  </component>
+</project>
