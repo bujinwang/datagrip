@@ -1,0 +1,52 @@
+SELECT DBO.OSUSR_PIF_INVOICETIMECARD.[TaskCodeId],
+       DBO.OSUSR_PIF_INVOICETIMECARD.[SubTaskCodeId],
+       DBO.OSUSR_PIF_INVOICETIMECARD.[FirmUserId],
+       DBO.OSUSR_PIF_INVOICETIMECARD.[Date],
+       DBO.OSUSR_PIF_TIMECARD.[WorkSolvTaskId],
+       COUNT(OSUSR_PIF_INVOICETIMECARD.[Id]),
+       SUM(OSUSR_PIF_INVOICETIMECARD.[Duration]),
+       SUM(OSUSR_PIF_INVOICETIMECARD.[TotalAmount])
+FROM DBO.OSUSR_PIF_INVOICETIMECARD
+         INNER JOIN DBO.OSUSR_PIF_TASKCODE
+                    ON DBO.OSUSR_PIF_INVOICETIMECARD.[TaskCodeId] = DBO.OSUSR_PIF_TASKCODE.[Id]
+         INNER JOIN DBO.OSUSR_PIF_TIMECARD ON DBO.OSUSR_PIF_INVOICETIMECARD.[TimeCardId] = DBO.OSUSR_PIF_TIMECARD.[Id]
+WHERE DBO.OSUSR_PIF_INVOICETIMECARD.[InvoiceProjectId] = 12343
+  AND DBO.OSUSR_PIF_TASKCODE.[isSummarized] = 1
+  AND DBO.OSUSR_PIF_TIMECARD.[TimeCardStatusId] <> 7
+GROUP BY DBO.OSUSR_PIF_INVOICETIMECARD.[TaskCodeId], DBO.OSUSR_PIF_INVOICETIMECARD.[SubTaskCodeId],
+         DBO.OSUSR_PIF_INVOICETIMECARD.[FirmUserId], DBO.OSUSR_PIF_INVOICETIMECARD.[Date],
+         DBO.OSUSR_PIF_TIMECARD.[WorkSolvTaskId]
+HAVING COUNT(OSUSR_PIF_INVOICETIMECARD.[Id]) > 1
+ORDER BY DBO.OSUSR_PIF_INVOICETIMECARD.[Date];
+
+
+
+SELECT DBO.OSUSR_PIF_InvoiceTimeCard.*
+FROM DBO.OSUSR_PIF_InvoiceTimeCard
+    INNER JOIN DBO.OSUSR_PIF_TaskCode
+ON DBO.OSUSR_PIF_InvoiceTimeCard.[TaskCodeId] = DBO.OSUSR_PIF_TaskCode.[Id]
+    INNER JOIN DBO.OSUSR_PIF_TimeCard ON DBO.OSUSR_PIF_InvoiceTimeCard.[TimeCardId] = DBO.OSUSR_PIF_TimeCard.[Id]
+WHERE DBO.OSUSR_PIF_InvoiceTimeCard.[InvoiceProjectId] = 12343
+--   AND DBO.OSUSR_PIF_TaskCode.[isSummarized] = 1
+--   AND DBO.OSUSR_PIF_InvoiceTimeCard.[TaskCodeId] = @TaskCodeId
+--   AND DBO.OSUSR_PIF_InvoiceTimeCard.[Date] = @Date
+--   AND DBO.OSUSR_PIF_InvoiceTimeCard.[FirmUserId] = @FirmUserId
+  AND ((@SubTaskCodeId = 0
+  AND DBO.OSUSR_PIF_InvoiceTimeCard.[SubTaskCodeId] IS NULL)
+   OR @SubTaskCodeId = DBO.OSUSR_PIF_InvoiceTimeCard.[SubTaskCodeId])
+  AND ((@WorkSolvTaskId = 0
+  AND DBO.OSUSR_PIF_TimeCard.[WorkSolvTaskId] IS NULL)
+   OR @WorkSolvTaskId = DBO.OSUSR_PIF_TimeCard.[WorkSolvTaskId])
+--   AND DBO.OSUSR_PIF_TimeCard.[TimeCardStatusId] <> @TimeCardStatus_WrittenOff
+-- ORDER BY DBO.OSUSR_PIF_InvoiceTimeCard.[Date], DBO.OSUSR_PIF_InvoiceTimeCard.[Id] ASC
+
+
+
+SELECT dbo.OSUSR_PIF_INVOICETIMECARD set isdeleted = false, TOTALAMOUNT = rate*, case
+
+
+
+SELECT * from DBO.OSUSR_PIF_InvoiceTimeCard where WorkSolvTaskId IS NULL
+
+SELECT TOP 10 *
+FROM DBO.OSUSR_PIF_INVOICETIMECARD
