@@ -1,0 +1,5 @@
+SELECT R.NAME AS ROLE, E.NAME AS ESPACE
+FROM OSSYS_ROLE R
+         INNER JOIN OSSYS_ESPACE E ON R.ESPACE_ID = E.ID
+WHERE E.IS_ACTIVE = 1
+  AND E.NAME NOT IN ('ECT_Provider', 'EPA_Taskbox', 'RESTDevService', 'SOAPDevService', 'Users', 'SecurityUtils')
